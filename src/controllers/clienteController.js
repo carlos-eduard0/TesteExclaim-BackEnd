@@ -39,7 +39,7 @@ module.exports = {
             }
 
             else {
-                return res.status(400).send({ message: "Usuário já cadastrado" });
+                return res.send({ message: "Usuário já cadastrado" });
             }
         } catch (error) {
         }
@@ -74,6 +74,15 @@ module.exports = {
             return res.status(200).json({ message: "Usuário deletado" });
         } catch (error) {
             return res.status(400).json({ message: "erro" });
+        }
+    },
+
+    async indexOne(req, res){
+        try {
+            const {id} = req.params;
+           const cliente = await connection('clientes').where('id', id).select('*').first();
+            return res.json(cliente)
+        } catch (error) {
         }
     }
 }
