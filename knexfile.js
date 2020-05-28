@@ -8,7 +8,7 @@ module.exports = {
           host: '127.0.0.1',
           user: 'postgres',
           password: '0511',
-          database: 'postgres',
+          database: 'carlos',
       },
       migrations: {
           directory:'./src/database/migrations',

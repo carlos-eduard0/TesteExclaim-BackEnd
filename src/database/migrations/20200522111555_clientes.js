@@ -8,10 +8,6 @@ exports.up = function(knex) {
         table.string('cpf').notNullable();
         table.string('rg').notNullable();
         table.string('orgaoEmissor').notNullable();
-        table.string('nomeCarro').notNullable();
-        table.string('anoCarro').notNullable();
-        table.string('marca').notNullable();
-        table.string('numeroPlaca').notNullable();
         table.string('cidade').notNullable();
         table.string('uf').notNullable();
         table.string('bairro').notNullable();

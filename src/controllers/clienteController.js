@@ -5,7 +5,7 @@ module.exports = {
     async create(req, res) {
 
         try {
-            const { nome, idade, email, telefone, cpf, rg, orgaoEmissor, nomeCarro, anoCarro, marca, numeroPlaca, cidade, uf, bairro, end, numero, cep, complemento } = req.body;
+            const { nome, idade, email, telefone, cpf, rg, orgaoEmissor, cidade, uf, bairro, end, numero, cep, complemento } = req.body;
             const id = crypto.randomBytes(4).toString('HEX');
             const cliente = await connection('clientes')
                 .where('email', email)
@@ -22,10 +22,6 @@ module.exports = {
                     cpf,
                     rg,
                     orgaoEmissor,
-                    nomeCarro,
-                    anoCarro,
-                    marca,
-                    numeroPlaca,
                     cidade,
                     uf,
                     bairro,
